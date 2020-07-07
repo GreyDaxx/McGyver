@@ -23,9 +23,9 @@ laby = Labyrinth()
 laby.generate()
 laby.draw(fenetre)
 
-mcgyver = Character(laby.mcg_pos, pygame.image.load("MacGyver.png").convert_alpha(), laby.area)
+mcgyver = Character(laby.mcg_pos, pygame.image.load("MacGyver.png").convert_alpha(), laby)
 mcgyver.draw(fenetre)
-gardien = Character(laby.gard_pos, pygame.image.load("Gardien.png").convert_alpha(), laby.area)
+gardien = Character(laby.gard_pos, pygame.image.load("Gardien.png").convert_alpha(), laby)
 gardien.draw(fenetre)
 
 mushroom = Objet("mushroom", pygame.image.load("Shroom32.png").convert_alpha(), laby.area)

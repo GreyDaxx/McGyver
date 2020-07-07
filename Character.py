@@ -13,13 +13,13 @@ class Character:
     def deplacement(self, mouv):
         next_x = self.position[0] + mouv[0]
         next_y = self.position[1] + mouv[1]
-        if self.laby[next_x][next_y] != 1:
+        if self.laby.area[next_x][next_y] != 1:
             self.position[0] += mouv[0]
             self.position[1] += mouv[1]
 
         """printing back McGyver and the Objets"""
-        print(self.laby[self.position[0]][self.position[1]])
-        if self.laby[next_x][next_y] == 9:
+        print(self.laby.area[self.position[0]][self.position[1]])
+        if self.laby.area[next_x][next_y] == 9:
             for objet in self.laby.objets:
                 if self.position[0] == objet.position[0] and self.position[1] == objet.position[1]:
                     objet.position[0] = 15
@@ -34,4 +34,4 @@ class Character:
 
     """actualising the displayed lab"""
     def update_map(self,area):
-        self.laby = area
+        self.laby.area = area
