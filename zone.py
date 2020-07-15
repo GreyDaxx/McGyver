@@ -1,8 +1,7 @@
 """
 importing all the necessary modules
+
 """
-import time
-import random
 import pygame
 
 from Character import Character
@@ -15,7 +14,8 @@ IN_PROGRESS = True
 
 """setting the window size"""
 fenetre = pygame.display.set_mode((480, 512), pygame.RESIZABLE)
-win = pygame.image.load("Win.jpg")
+win = pygame.image.load("Win.png")
+lose = pygame.image.load("lose.jpg")
 
 
 """initialising the lab, McGyver's and the guardian's position, logic and graphic"""
@@ -47,10 +47,9 @@ while True:
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                CONTINUER == 0
+                CONTINUER = 0
 
             if event.type == pygame.KEYDOWN:
-                """selecting the direction of McGyver, from the input"""
 
                 if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                     mcgyver.deplacement([0, -1])
@@ -73,6 +72,12 @@ while True:
 
             #if McGyver has all 3 Objets and have the same position as the guardian, you win
             if mcgyver.position[0] == gardien.position[0] and mcgyver.position[1] == gardien.position[1]:
-                if inventory == 3:
-                    print("bravo vous etes sorti du labyrinthe, appuyez sur R pour recommencer ou ")
+                if mcgyver.inventory == 3:
+                	fenetre.blit(win,(0,0))
+                	pygame.display.flip()
 
+
+                else:
+                	fenetre.blit(lose, (0,0))
+                	pygame.display.flip()
+                CONTINUER = 0
