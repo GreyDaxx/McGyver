@@ -34,9 +34,9 @@ class Labyrinth:
 
     """Draw the lab, and inventory from the .txt infos, with the determined sprite size"""
     def draw(self, fenetre):
-        wall = pygame.image.load("brick.png").convert_alpha()
-        tile = pygame.image.load("grass.png").convert_alpha()
-        inv_slot = pygame.image.load("inv_slot.jpg").convert_alpha()
+        wall = pygame.image.load("pics/brick.png").convert_alpha()
+        tile = pygame.image.load("pics/grass.png").convert_alpha()
+        inv_slot = pygame.image.load("pics/inv_slot.jpg").convert_alpha()
 
         struc_x = 0
         struc_y = 0

@@ -14,8 +14,8 @@ IN_PROGRESS = True
 
 """setting the window size"""
 fenetre = pygame.display.set_mode((480, 512), pygame.RESIZABLE)
-win = pygame.image.load("Win.png")
-lose = pygame.image.load("lose.jpg")
+win = pygame.image.load("pics/Win.png")
+lose = pygame.image.load("pics/lose.jpg")
 
 
 """initialising the lab, McGyver's and the guardian's position, logic and graphic"""
@@ -23,16 +23,16 @@ laby = Labyrinth()
 laby.generate()
 laby.draw(fenetre)
 
-mcgyver = Character(laby.mcg_pos, pygame.image.load("MacGyver.png").convert_alpha(), laby)
+mcgyver = Character(laby.mcg_pos, pygame.image.load("pics/MacGyver.png").convert_alpha(), laby)
 mcgyver.draw(fenetre)
-gardien = Character(laby.gard_pos, pygame.image.load("Gardien.png").convert_alpha(), laby)
+gardien = Character(laby.gard_pos, pygame.image.load("pics/Gardien.png").convert_alpha(), laby)
 gardien.draw(fenetre)
 
-mushroom = Objet("mushroom", pygame.image.load("Shroom32.png").convert_alpha(), laby.area)
+mushroom = Objet("mushroom", pygame.image.load("pics/Shroom32.png").convert_alpha(), laby.area)
 mushroom.draw(fenetre)
-crowbar = Objet("crowbar", pygame.image.load("crowbar.png").convert_alpha(), laby.area)
+crowbar = Objet("crowbar", pygame.image.load("pics/crowbar.png").convert_alpha(), laby.area)
 crowbar.draw(fenetre)
-seringe = Objet("seringe", pygame.image.load("seringe.png").convert_alpha(), laby.area)
+seringe = Objet("seringe", pygame.image.load("pics/seringe.png").convert_alpha(), laby.area)
 seringe.draw(fenetre)
 laby.place_objet(mushroom)
 laby.place_objet(crowbar)
@@ -75,7 +75,7 @@ while True:
                 if mcgyver.inventory == 3:
                 	fenetre.blit(win,(0,0))
                 	pygame.display.flip()
-
+                	CONTINUER = 0
 
                 else:
                 	fenetre.blit(lose, (0,0))
