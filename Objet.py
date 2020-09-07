@@ -1,3 +1,5 @@
+# coding: utf-8
+
 from Constantes import SPRITE_SIZE
 import random
 
@@ -18,9 +20,8 @@ class Objet:
         while self.laby[rand_x][rand_y] != 0:
             rand_x = random.randint(0, len(self.laby)-1)
             rand_y = random.randint(0, len(self.laby)-1)
-        return [rand_x,rand_y]
+        return [rand_x, rand_y]
 
     """draw Objets from their position"""
     def draw(self, fenetre):
-        fenetre.blit(self.img,(self.position[1]*SPRITE_SIZE, self.position[0]*SPRITE_SIZE))
-
+        fenetre.blit(self.img, (self.position[1]*SPRITE_SIZE, self.position[0]*SPRITE_SIZE))

@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import pygame
 from Constantes import SPRITE_SIZE
 
@@ -26,9 +28,9 @@ class Labyrinth:
                 content.append(ligne_map)
             self.area = content
 
-    """generating objet's logic position"""
-    def place_objet(self,objet):
-        self.area[objet.position [0]][objet.position[1]] = 9
+    """generating object's logic position"""
+    def place_objet(self, objet):
+        self.area[objet.position[0]][objet.position[1]] = 9
         self.objets.append(objet)
         print(self.area)
 
@@ -45,14 +47,14 @@ class Labyrinth:
             for element in ligne:
                 element = int(element)
                 if element == 1:
-                    fenetre.blit(wall,(struc_x*SPRITE_SIZE,struc_y*SPRITE_SIZE))
+                    fenetre.blit(wall, (struc_x*SPRITE_SIZE, struc_y*SPRITE_SIZE))
 
                 elif element == 6:
-                    fenetre.blit(inv_slot,(struc_x*SPRITE_SIZE, struc_y*SPRITE_SIZE))
+                    fenetre.blit(inv_slot, (struc_x*SPRITE_SIZE, struc_y*SPRITE_SIZE))
 
                 else:
-                    fenetre.blit(tile,(struc_x*SPRITE_SIZE,struc_y*SPRITE_SIZE))
+                    fenetre.blit(tile, (struc_x*SPRITE_SIZE, struc_y*SPRITE_SIZE))
                 struc_x += 1
 
             struc_x = 0
-            struc_y +=1
+            struc_y += 1
