@@ -7,10 +7,25 @@ from Constantes import SPRITE_SIZE
 class Labyrinth:
     """initialising laby Class"""
     def __init__(self):
-        self.area = []
-        self.mcg_pos = []
-        self.gard_pos = []
-        self.objets = []
+        self._area = []
+        self._mcg_pos = []
+        self._gard_pos = []
+        self._objets = []
+
+    def get_area(self):
+        return self._area
+
+    def get_mcg_pos(self):
+        return self._mcg_pos
+
+    def get_gard_pos(self):
+        return self._gard_pos
+
+    def get_objets(self):
+        return self._objets
+
+    def pickup_objets(self, objets):
+        self._objets.remove(objets)
 
     """Generating tiles, wall, and guardian position from .txt file"""
     def generate(self):
@@ -22,17 +37,17 @@ class Labyrinth:
                     if element != '\n':
                         ligne_map.append(int(element))
                     if element == '3':
-                        self.mcg_pos = [struc_x, struc_y]
+                        self._mcg_pos = [struc_x, struc_y]
                     if element == '4':
-                        self.gard_pos = [struc_x, struc_y]
+                        self._gard_pos = [struc_x, struc_y]
                 content.append(ligne_map)
-            self.area = content
+            self._area = content
 
     """generating object's logic position"""
-    def place_objet(self, objet):
-        self.area[objet.position[0]][objet.position[1]] = 9
-        self.objets.append(objet)
-        print(self.area)
+    def place_objet(self, _objets):
+        self._area[_objets.get_position()[0]][_objets.get_position()[1]] = 9
+        self._objets.append(_objets)
+        print(self._area)
 
     """Draw the lab, and inventory from the .txt infos, with the determined sprite size"""
     def draw(self, fenetre):
@@ -43,7 +58,7 @@ class Labyrinth:
         struc_x = 0
         struc_y = 0
 
-        for ligne in self.area:
+        for ligne in self._area:
             for element in ligne:
                 element = int(element)
                 if element == 1:
