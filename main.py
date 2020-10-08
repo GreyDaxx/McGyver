@@ -70,7 +70,7 @@ if __name__ == "__main__":
 
                 #if McGyver has all 3 Objets and have the same position as the guardian, you win
                 if mcgyver.get_position()[0] == gardien.get_position()[0] and mcgyver.get_position()[1] == gardien.get_position()[1]:
-                    if mcgyver.get_inventory == 3:
+                    if mcgyver.get_inventory() == 3:
                         fenetre.blit(win, (0, 0))
                         pygame.display.flip()
                         CONTINUER = 0
