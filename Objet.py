@@ -1,7 +1,7 @@
-# coding: utf-8
+"""coding: utf-8"""
 
-from Constantes import SPRITE_SIZE
 import random
+from constantes import SPRITE_SIZE
 
 
 class Objet:
@@ -13,19 +13,23 @@ class Objet:
         self._name = name
 
     def get_laby(self):
+        """get the hidden laby value"""
         return self._laby
 
     def get_position(self):
+        """get the hidden position value"""
         return self._position
-    
+
     def get_img(self):
+        """get the hidden img value"""
         return self._img
-    
+
     def get_name(self):
+        """get the hidden name value"""
         return self._name
 
-    """generate random objet position within the walkable tiles"""
     def generate_position(self):
+        """generate random objet position within the walkable tiles"""
         rand_x = random.randint(0, len(self._laby)-2)
         rand_y = random.randint(0, len(self._laby[0])-1)
 
@@ -34,6 +38,6 @@ class Objet:
             rand_y = random.randint(0, len(self._laby[0])-1)
         return [rand_x, rand_y]
 
-    """draw Objets from their position"""
     def draw(self, fenetre):
+        """draw Objets from their position"""
         fenetre.blit(self._img, (self._position[1]*SPRITE_SIZE, self._position[0]*SPRITE_SIZE))
