@@ -3,9 +3,9 @@
 # importing all the necessary modules
 import pygame
 
-from character import Character
-from objet import Objet
-from laby import Labyrinth
+from package import character
+from package import objet
+from package import laby
 
 if __name__ == "__main__":
 

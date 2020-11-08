@@ -1,7 +1,8 @@
 """coding: utf-8"""
 
 import pygame
-from .constantes import SPRITE_SIZE
+from constantes import SPRITE_SIZE
+
 
 class Labyrinth:
     """Laby class used to generate the area to play within from .txt, as position of characters and objet"""
