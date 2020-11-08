@@ -1,6 +1,6 @@
 """coding: utf-8"""
 
-from constantes import SPRITE_SIZE
+from .constantes import SPRITE_SIZE
 
 
 class Character:

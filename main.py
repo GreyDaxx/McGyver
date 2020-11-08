@@ -18,40 +18,40 @@ if __name__ == "__main__":
     lose = pygame.image.load("pics/lose.jpg")
 
     # initialising the lab, McGyver's and the guardian's position, logic and graphic
-    laby = Labyrinth()
-    laby.generate()
-    laby.draw(fenetre)
+    lab = laby.Labyrinth()
+    lab.generate()
+    lab.draw(fenetre)
 
-    mcgyver = Character(
-        laby.get_mcg_pos(), pygame.image.load("pics/MacGyver.png").convert_alpha(), laby
+    mcgyver = character.Character(
+        lab.get_mcg_pos(), pygame.image.load("pics/MacGyver.png").convert_alpha(), lab
     )
     mcgyver.draw(fenetre)
-    gardien = Character(
-        laby.get_gard_pos(), pygame.image.load("pics/Gardien.png").convert_alpha(), laby
+    gardien = character.Character(
+        lab.get_gard_pos(), pygame.image.load("pics/Gardien.png").convert_alpha(), lab
     )
     gardien.draw(fenetre)
 
-    mushroom = Objet(
+    mushroom = objet.Objet(
         "mushroom",
         pygame.image.load("pics/Shroom32.png").convert_alpha(),
-        laby.get_area(),
+        lab.get_area(),
     )
     mushroom.draw(fenetre)
-    crowbar = Objet(
+    crowbar = objet.Objet(
         "crowbar",
         pygame.image.load("pics/crowbar.png").convert_alpha(),
-        laby.get_area(),
+        lab.get_area(),
     )
     crowbar.draw(fenetre)
-    seringe = Objet(
+    seringe = objet.Objet(
         "seringe",
         pygame.image.load("pics/seringe.png").convert_alpha(),
-        laby.get_area(),
+        lab.get_area(),
     )
     seringe.draw(fenetre)
-    laby.place_objet(mushroom)
-    laby.place_objet(crowbar)
-    laby.place_objet(seringe)
+    lab.place_objet(mushroom)
+    lab.place_objet(crowbar)
+    lab.place_objet(seringe)
 
     pygame.display.flip()
 
@@ -74,13 +74,13 @@ if __name__ == "__main__":
                     if event.key == pygame.K_DOWN or event.key == pygame.K_s:
                         mcgyver.deplacement([1, 0])
 
-                    laby.draw(fenetre)
+                    lab.draw(fenetre)
                     mushroom.draw(fenetre)
                     crowbar.draw(fenetre)
                     seringe.draw(fenetre)
                     gardien.draw(fenetre)
                     mcgyver.draw(fenetre)
-                    mcgyver.update_map(laby._area)
+                    mcgyver.update_map(lab._area)
                     pygame.display.flip()
 
                 # if McGyver has all 3 Objets and have the same position as the guardian, you win

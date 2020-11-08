@@ -1,7 +1,7 @@
 """coding: utf-8"""
 
 import random
-from constantes import SPRITE_SIZE
+from .constantes import SPRITE_SIZE
 
 
 class Objet:
