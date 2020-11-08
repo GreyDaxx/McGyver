@@ -4,9 +4,9 @@ from constantes import SPRITE_SIZE
 
 
 class Character:
-    """initialasing Character Class"""
-
+    """Character class used to generate graphic position of chara, movement and inventory"""
     def __init__(self, depart, img, laby):
+        """initialasing Character Class"""
         self._position = depart
         self._img = img
         self._laby = laby

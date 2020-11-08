@@ -5,8 +5,9 @@ from constantes import SPRITE_SIZE
 
 
 class Labyrinth:
-    """initialising laby Class"""
+    """Laby class used to generate the area to play within, as position of characters and objet"""
     def __init__(self):
+        """initialising laby Class"""
         self._area = []
         self._mcg_pos = []
         self._gard_pos = []

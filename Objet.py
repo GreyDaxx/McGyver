@@ -5,8 +5,9 @@ from constantes import SPRITE_SIZE
 
 
 class Objet:
-    """initialising Objet Class"""
+    """Objet class creating and placing objet within the lab"""
     def __init__(self, name, img, laby):
+        """initialising Objet Class"""
         self._laby = laby
         self._position = self.generate_position()
         self._img = img
